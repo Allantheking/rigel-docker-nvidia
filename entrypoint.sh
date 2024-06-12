@@ -16,8 +16,8 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./rigel --a "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
+./rigel --coin "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
 while [ $? -eq 42 ]; do
     sleep 15s
-    ./rigel --a "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
+    ./rigel --coin "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
 done
