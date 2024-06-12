@@ -16,7 +16,7 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./rigel --algorithm "${ALGO}" --url stratum+tcp://"${POOL}" --username "${WALLET}"
+./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}"
 while [ $? -eq 42 ]; do
     sleep 15s
     ./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}"
