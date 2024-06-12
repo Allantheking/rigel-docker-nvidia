@@ -16,8 +16,8 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --no-nvml
+./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --nvml "0"
 while [ $? -eq 42 ]; do
     sleep 15s
-    ./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --no-nvml
+    ./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --nvml "0"
 done
