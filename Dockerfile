@@ -28,7 +28,7 @@ WORKDIR /opt/rigel
 ENV ALGO=""
 ENV POOL=""
 ENV WALLET=""
-ENV EXTRA=""
+ENV OPTIONS=--no-nvml
 
 # Set the entrypoint to the entrypoint script
 ENTRYPOINT ["/opt/rigel/entrypoint.sh"]
