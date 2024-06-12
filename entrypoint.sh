@@ -16,8 +16,8 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./rigel --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
+./rigel --a "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
 while [ $? -eq 42 ]; do
     sleep 15s
-    ./rigel --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
+    ./rigel --a "${ALGO}" --url "${POOL}" --u "${WALLET}" "${EXTRA}"
 done
