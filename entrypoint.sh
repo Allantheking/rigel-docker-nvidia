@@ -16,8 +16,8 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./lolMiner --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
+./rigel --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
 while [ $? -eq 42 ]; do
     sleep 15s
-    ./lolMiner --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
+    ./rigel --algo "${ALGO}" --pool "${POOL}" --user "${WALLET}" "${EXTRA}"
 done
