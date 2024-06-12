@@ -16,8 +16,8 @@ check_required_env "POOL"
 check_required_env "WALLET"
 
 
-./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --nvml "0"
+./rigel --api-bind-http 0.0.0.0:4067 --api-read-only --no-nvml --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}"
 while [ $? -eq 42 ]; do
     sleep 15s
-    ./rigel --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}" --nvml "0"
+    ./rigel --api-bind-http 0.0.0.0:4067 --api-read-only --no-nvml --algorithm "${ALGO}" --url "${POOL}" --username "${WALLET}"
 done
