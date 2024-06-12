@@ -7,8 +7,6 @@ RUN apt-get update && \
     apt-get install -y wget tar curl libcurl4 && \
     rm -rf /var/lib/apt/lists/*
 
-    https://github.com/rigelminer/rigel/releases/download/1.17.4/rigel-1.17.4-linux.tar.gz
-
 RUN wget https://github.com/rigelminer/rigel/releases/download/${RIGEL_VERSION}/rigel-${RIGEL_VERSION}-linux.tar.gz -O /tmp/rigel.tar.gz && \
     mkdir -p /opt/rigel && \
     tar --strip-components=1 -xvf /tmp/rigel.tar.gz -C /opt/rigel && \
