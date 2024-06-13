@@ -3,9 +3,15 @@ FROM nvidia/cuda:12.4.1-base-ubuntu22.04 as nvidia
 ENV DEBIAN_FRONTEND=noninteractive
 ARG RIGEL_VERSION=1.17.4
 
-RUN apt-get update && \
-    apt-get install -y wget tar curl libcurl4 && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    curl \
+    libcurl4 \
+    tar \
+    wget \
+    build-essential \
+    cuda-nvml-dev-12-4 \
+    libnvidia-compute-525 \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/rigelminer/rigel/releases/download/${RIGEL_VERSION}/rigel-${RIGEL_VERSION}-linux.tar.gz -O /tmp/rigel.tar.gz && \
     mkdir -p /opt/rigel && \
